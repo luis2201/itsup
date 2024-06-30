@@ -84,8 +84,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 window.addEventListener('load', function() {
-    // Espera 3 segundos antes de mostrar el contenido (3000 milisegundos)
     setTimeout(function() {
         document.getElementById('loader').style.display = 'none';
+
+        document.getElementById('mainNavbar').classList.add('fixed-top');
     }, 5000);
 });
