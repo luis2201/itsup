@@ -3,7 +3,7 @@
     class HomeController
     {
 
-        public function index()
+        public function home()
         {
             view('home.index', []);
         }

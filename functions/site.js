@@ -84,9 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 window.addEventListener('load', function() {
-    setTimeout(function() {
-        document.getElementById('loader').style.display = 'none';
-
-        document.getElementById('mainNavbar').classList.add('fixed-top');
-    }, 5000);
+    // setTimeout(function() {
+    //     document.getElementById('loader').style.display = 'none';
+    // }, 5000);
+    document.getElementById('mainNavbar').classList.add('fixed-top');
 });
