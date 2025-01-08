@@ -1,27 +1,27 @@
 var imagePaths1 = [
-    "public/img/fotos/01.jpg",
-    "public/img/fotos/02.jpg",
-    "public/img/fotos/03.jpg",
-    "public/img/fotos/04.jpg",
-    "public/img/fotos/05.jpg",
-    "public/img/fotos/06.jpg",
-    "public/img/fotos/07.jpg",
-    "public/img/fotos/08.jpg",
-    "public/img/fotos/09.jpg",
-    "public/img/fotos/10.jpg"
+    "public/img/fotos/01.webp",
+    "public/img/fotos/02.webp",
+    "public/img/fotos/03.webp",
+    "public/img/fotos/04.webp",
+    "public/img/fotos/05.webp",
+    "public/img/fotos/06.webp",
+    "public/img/fotos/07.webp",
+    "public/img/fotos/08.webp",
+    "public/img/fotos/09.webp",
+    "public/img/fotos/10.webp"
 ];
 
 var imagePaths2 = [
-    "public/img/fotos/01.jpg",
-    "public/img/fotos/02.jpg",
-    "public/img/fotos/03.jpg",
-    "public/img/fotos/04.jpg",
-    "public/img/fotos/05.jpg",
-    "public/img/fotos/06.jpg",
-    "public/img/fotos/07.jpg",
-    "public/img/fotos/08.jpg",
-    "public/img/fotos/09.jpg",
-    "public/img/fotos/10.jpg"
+    "public/img/fotos/01.webp",
+    "public/img/fotos/02.webp",
+    "public/img/fotos/03.webp",
+    "public/img/fotos/04.webp",
+    "public/img/fotos/05.webp",
+    "public/img/fotos/06.webp",
+    "public/img/fotos/07.webp",
+    "public/img/fotos/08.webp",
+    "public/img/fotos/09.webp",
+    "public/img/fotos/10.webp"
 ];
 
 var currentImageIndex1 = -1;
@@ -54,8 +54,9 @@ function cambiarImagen2() {
 
     setTimeout(cambiarImagen1, 10000); 
 }
-
-cambiarImagen1();
+if(document.getElementById("img1")){
+    cambiarImagen1();
+}
 
 function activeTab(tab) {
     var elementos = document.getElementsByClassName("active-tab");
@@ -84,9 +85,45 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 window.addEventListener('load', function() {
-    setTimeout(function() {
-        document.getElementById('loader').style.display = 'none';
+    // setTimeout(function() {
+    //     document.getElementById('loader').style.display = 'none';
+    // }, 5000);
+    document.getElementById('mainNavbar').classList.add('fixed-top');
+});
 
-        document.getElementById('mainNavbar').classList.add('fixed-top');
-    }, 5000);
+if(document.querySelector('#carouselDestacadoSlides')){
+    const myCarouselElement = document.querySelector('#carouselDestacadoSlides');
+
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+        interval: 2000,
+        touch: false
+    });
+}
+
+// Seleccionar el botón
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Mostrar el botón cuando el usuario hace scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollToTopBtn.style.display = "block";
+  } else {
+    scrollToTopBtn.style.display = "none";
+  }
+});
+
+// Función para subir al principio
+scrollToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" // Animación suave
+  });
+});
+
+// Seleccionar el botón
+const goToIndexBtn = document.getElementById("goToIndexBtn");
+
+// Redirigir al index al hacer clic
+goToIndexBtn.addEventListener("click", () => {
+  window.location.href = "/"; 
 });

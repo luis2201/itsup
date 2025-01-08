@@ -1,10 +1,11 @@
 <?php
 
-session_start();
+// // session_start();
 
 include_once "utils/defaults.php";
-// include_once "models/DB.php";
-// include_once "models/Main.php";
+include_once "config/site.php";
+// // include_once "models/DB.php";
+// // include_once "models/Main.php";
 
 
 $controller = ucfirst($_GET['controller']);
@@ -21,8 +22,9 @@ if (empty($action))
 
 $ctrlName = ucfirst($controller) . "Controller";
 
-include "./controllers/$ctrlName.php";
+include "controllers/$ctrlName.php";
 $ctrl = new $ctrlName;
+
 $ctrl->{$action}($id);
 
 ?>

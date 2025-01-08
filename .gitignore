@@ -1,5 +1,11 @@
 .vscode/
 
+config/
+
 public/
 
+utils/defaults.php
+
 .htaccess
+
+routes.php
